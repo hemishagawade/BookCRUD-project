@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Book Details</title>
+    <style>
+        body{
+            padding: 50px;
+            background-color: rgb(185, 221, 250);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .container{
+            width: max-content;
+            margin-top: 70px;
+            background: whitesmoke;
+            padding: 20px;
+            border-radius: 10px;
+            color: rgb(36, 34, 34);
+            box-shadow: 5px 5px 10px rgb(36, 36, 36);
+        }
+        #button{
+            background-color: rgb(24, 60, 87);
+            color: whitesmoke;
+            padding: 5px 10px;
+            font-size: larger;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <div class="container">
+        <h2 style="color: rgb(24, 60, 87);">Please update the book details:</h2>
+        <form action="/update/{{book.id}}" method="post">
+            {% csrf_token %}
+            <table cellspacing="10" cellpadding="5">
+                <tr>
+                    <td>Title:</td>
+                    <td><input type="text" name="title" value="{{book.title}}" required></td>
+                </tr>
+                <tr>
+                    <td>Author:</td>
+                    <td><input type="text" name="author" value="{{book.author}}" required></td>
+                </tr>
+                <tr>
+                    <td>Price:</td>
+                    <td><input type="text" name="price" value="{{book.price}}" required></td>
+                </tr>
+                <tr>
+                    <th colspan="2"><center><input type="submit" id="button" value="UPDATE Book"></center></th>
+                </tr>
+            </table>
+        </form>
+    </div>
+</center>
+</body>
+</html>

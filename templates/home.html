@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body{
+            padding: 30px;
+            background-color: rgb(185, 221, 250);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: rgb(36, 36, 36);
+        }
+        i{
+            color: rgb(24, 60, 87);
+            font-size: larger;
+            font-weight: bolder;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .container{
+            width: max-content;
+            background: whitesmoke;
+            padding: 20px;
+            border-radius: 10px;
+            color: rgb(36, 36, 36);
+            box-shadow: 5px 5px 10px rgb(36, 36, 36);
+        }
+        table{
+            background-color: rgb(170, 216, 253);
+            width: max-content;
+            border-collapse: collapse;
+        }
+        a{
+            text-decoration: none;
+            background-color: whitesmoke;
+            color: rgb(68, 67, 67);
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: solid 1px rgb(24, 60, 87);
+
+        }
+        #book{
+            font-size: x-large;
+            background-color: rgb(24, 60, 87);
+            color: whitesmoke;
+            border-radius: 2px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <h1>Welcome to the <i>BOOK APP</i> !</h1> <br>
+    <a href="/addbook" id="book">Click here to ADD a new Book!</a> <br><br><br>
+    <div class="container">
+        <table border="1.5" cellpadding="12.5">
+            <caption><h2 style="color: rgb(24, 60, 87);">Book Details</h2></caption>
+            <tr>
+                <th>ID</th>
+                <th>Book Title</th>
+                <th>Author Name</th>
+                <th>Price(Rs.)</th>
+                <th>Action</th>
+            </tr>
+            {% for book in books %}
+            <tr>
+                <td>{{book.id}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.price}}</td>
+                <td>
+                    <a href="/delete/{{book.id}}">DELETE</a> &nbsp;
+                    <a href="/update/{{book.id}}">UPDATE</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</center>
+</body>
+</html>
