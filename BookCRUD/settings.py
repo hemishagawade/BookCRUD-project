@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': 'django_book',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'Hemy@29070118',
+        'PASSWORD': 'enteryourpassword',
         'PORT': 3306
     }
 }
